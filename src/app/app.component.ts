@@ -41,9 +41,9 @@ export class AppComponent implements OnInit {
 
 
     // sets an idle timeout of 5 seconds, for testing purposes.
-    idle.setIdle(5);
+    idle.setIdle(3);
     // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-    idle.setTimeout(15);
+    idle.setTimeout(10);
     // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
     idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
     idle.onIdleEnd.subscribe(() => {
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
     idle.onTimeout.subscribe(() => {
 
-      this.idleState = 'Desconectado!';
+      this.idleState = 'tiempo inactivo ha sido desconentado';
       this.timedOut = true;
       console.log(this.idleState);
       this.router.navigate(['']);
@@ -62,8 +62,7 @@ export class AppComponent implements OnInit {
       this.logService.cerrarSesion();
     });
 
-    console.log('entro aca');
-
+    
     idle.onIdleStart.subscribe(() => {
       this.idleState = 'Tu\'estado es inactivo!'
       console.log(this.idleState);
@@ -109,6 +108,10 @@ export class AppComponent implements OnInit {
     } else {
       this.flagToolbar = true;
     }
+
+    this.loginService.usuarioReactivo.subscribe(data => {
+      this.flaguser = data;
+    });
 
     this.loginService.usuarioReactivo.subscribe(data => {
       this.flaguser = data;

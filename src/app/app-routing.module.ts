@@ -15,6 +15,7 @@ import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { GuardianService } from './_share/guardian.service';
 import { ConductorComponent } from './pages/conductor/conductor.component';
 import { AgregarConductorComponent } from './pages/conductor/agregar-conductor/agregar-conductor.component';
+import { ConduccionComponent } from './pages/conduccion/conduccion.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   },
   //Pagina no encontro
   {path: 'usuario', component: UsuarioComponent, canActivate: [GuardianService]},
+  {path: 'conduccion', component: ConduccionComponent, canActivate: [GuardianService]},
   {path: 'login', component: LoginComponent},
   {path: 'error', component: NotOkComponent},
   {path: 'nopermiso', component: NotAllowedComponent},
@@ -44,6 +46,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

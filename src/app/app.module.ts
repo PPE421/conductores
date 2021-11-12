@@ -24,7 +24,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 import { ConductorComponent } from './pages/conductor/conductor.component';
-import { AgregarConductorComponent } from './pages/conductor/agregar-conductor/agregar-conductor.component'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
+import { AgregarConductorComponent } from './pages/conductor/agregar-conductor/agregar-conductor.component';
+import { ConduccionComponent } from './pages/conduccion/conduccion.component'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 
 export function tokenGetter() {
   let tk = sessionStorage.getItem(environment.TOKEN);
@@ -46,8 +47,10 @@ export function tokenGetter() {
     NotAllowedComponent,
     LoginComponent,
     UsuarioComponent,
+    ConduccionComponent,
     ConductorComponent,
-    AgregarConductorComponent
+    AgregarConductorComponent,
+    ConduccionComponent
   ],
   imports: [
     AppRoutingModule,

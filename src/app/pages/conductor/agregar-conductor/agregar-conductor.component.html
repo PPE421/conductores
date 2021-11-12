@@ -46,7 +46,7 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Clave</mat-label>
-          <input matInput placeholder="******" formControlName="clave" type="password" maxlength="15"/>
+          <input matInput placeholder="Debe tener almenos 1 mayus, un signo y un numero" formControlName="clave" type="password" maxlength="15"/>
           <mat-error *ngIf="clave.invalid && clave.errors.required">Clave requerida</mat-error>
           <mat-error *ngIf="clave.invalid && clave.errors.pattern">clave invalida</mat-error>
         </mat-form-field>

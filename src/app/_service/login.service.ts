@@ -15,6 +15,8 @@ export class LoginService {
 
   public usuarioReactivo = new Subject<boolean>();
 
+  public conduccionReactivo = new Subject<boolean>();
+
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   get isLoggedIn() {
